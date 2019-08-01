@@ -1,19 +1,23 @@
 package org.phonylou.algorithmlearning.singlelist;
 
+import java.util.*;
+
 public class Main {
     public static void main(String[] args) {
-        String s1 = new String("1");
-        String s2 = "1";
-        System.out.println(s1 == s2);
-        s1.intern();
-        System.out.println(s1 == s2);
+        Random r = new Random();
+        Set<Integer> intSet = new TreeSet<>();
+        ArrayList<Integer> intArr = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            int result = r.nextInt(100);
+            System.out.println(result);
+            intSet.add(result);
+            intArr.add(result);
+        }
 
-        String s3 = new String("1") + new String("1");
-        s3.intern();
-        String s4 = "11";
-        System.out.println(s3 == s4);
+        System.out.println(intSet);
+        System.out.println(intArr);
+        Collections.sort(intArr);
+        System.out.println(intArr);
 
-        StringBuffer sBuffer = new StringBuffer("abc");
-        sBuffer.append("fdf");
     }
 }
